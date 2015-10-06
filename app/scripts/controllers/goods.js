@@ -180,6 +180,7 @@ module.controller('GoodsCtrl', function($location, $rootScope, $scope, $http, $r
               }              
             );
           }
+    else if ($scope.paramSection == "pastorders") {
         }
       );
     }
@@ -207,6 +208,7 @@ module.controller('GoodsCtrl', function($location, $rootScope, $scope, $http, $r
     }
     plugins.get('transaction').get('dgsDelivery').execute(confirmDelivery_args);
   }
+    else {
 
   $scope.addToCart = function(details) {
     shoppingCartService.add($scope.symbol, details, 1).then(
