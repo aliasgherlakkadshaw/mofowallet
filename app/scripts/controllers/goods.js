@@ -14,16 +14,15 @@
     $scope.paramSection = $routeParams.listing;
 
     var api = nxt.get($scope.id_rs);
-    $scope.symbol= api.engine.symbol
+    $scope.symbol = api.engine.symbol
 
     $scope.shoppingCart = shoppingCartService.get();
 
     $scope.deleteGood = function(good, index) {
       var deleteGoodArgs = {
-        // requestType: 'dgsDelisting',
         goods: good.goods
       }
-      plugins.get('transaction').get('dgsDelisting').execute($scope.id_rs, deleteGoodArgs)        
+      plugins.get('transaction').get('dgsDelisting').execute($scope.id_rs, deleteGoodArgs)
     }
 
     $scope.details = function(goodsDetails) {
@@ -31,16 +30,14 @@
     }
 
     $scope.add = function() {
-      // var args = {
-      //   requestType: 'dgsListing'
-      // }
       plugins.get('transaction').get('dgsListing').execute();
     }
 
     if ($scope.paramSection == 'listing') {
       $scope.showGoods = new AllGoodsProvider(api, $scope, 10, $scope.id_rs);
       $scope.showGoods.reload();
-    } else if ($scope.paramSection == 'cart') {
+    } 
+    else if ($scope.paramSection == 'cart') {
       $scope.shoppingCart = shoppingCartService.get();
       $scope.total = 0;
       $scope.shoppingCart.forEach(function(good) {
@@ -58,12 +55,13 @@
       });
       $scope.placeOrder = function() {
         $scope.balance = $rootScope.userData.balanceNXT;
-          if($scope.total >= $scope.balance){
-            $scope.balanceError = "You don't have enough balance to place these orders.";
-          } else {
-            processCart($scope.shoppingCart);
-            $scope.balanceError = ' ';
-          }
+        if ($scope.total >= $scope.balance) {
+          $scope.balanceError = "You don't have enough balance to place these orders.";
+        } 
+        else {
+          processCart($scope.shoppingCart);
+          $scope.balanceError = ' ';
+        }
       }
 
       function processCart(shoppingCart) {
@@ -71,7 +69,6 @@
           var shoppingCartGoods = shoppingCart[0];
           console.log(shoppingCartGoods);
           var order_args = {
-            // requestType: "dgsPurchase",
             goods: shoppingCartGoods.goods,
             priceNQT: shoppingCartGoods.priceNQT,
             name: shoppingCartGoods.name,
@@ -79,21 +76,21 @@
             recipient: shoppingCartGoods.seller
           }
           plugins.get('transaction').get('dgsPurchase').execute($scope.id_rs, order_args).then(function(data) {
-            if(data) { 
-                $http({
-                  url: shoppingCartGoods.callback,
-                  data: shoppingCartGoods,
-                  method: 'POST'
-                }).success(function(data) {
-                  console.log(data);
-                }).error(function(err) {
-                  console.log(err);
-                })
-                shoppingCartService.removeItem(0);
-                shoppingCart.splice(0, 1);
-                processCart(shoppingCart);
+            if (data) {
+              $http({
+                url: shoppingCartGoods.callback,
+                data: shoppingCartGoods,
+                method: 'POST'
+              }).success(function(data) {
+                console.log(data);
+              }).error(function(err) {
+                console.log(err);
+              })
+              shoppingCartService.removeItem(0);
+              shoppingCart.splice(0, 1);
+              processCart(shoppingCart);
 
-                $scope.successful = "Payment Completed";
+              $scope.successful = "Payment Completed";
             }
           });
         }
@@ -104,7 +101,8 @@
         $scope.shoppingCart.splice(index, 1);
         $scope.total -= parseFloat(items.priceNQT);
       }
-    } else if ($scope.paramSection == "pastorders") {
+    } 
+    else if ($scope.paramSection == "pastorders") {
 
       $scope.shoppingCart = shoppingCartService.get();
 
@@ -117,10 +115,12 @@
         }
         plugins.get('transaction').get('sendMessage').execute($scope.id_rs, recipient_args);
       }
-    } else if ($scope.paramSection == "viewlisting") {
+    } 
+    else if ($scope.paramSection == "viewlisting") {
       $scope.showGoods = new UserGoodsProvider(api, $scope, 10, $scope.id_rs);
       $scope.showGoods.reload();
-    } else if ($scope.paramSection == 'solditems') {
+    } 
+    else if ($scope.paramSection == 'solditems') {
       // for pending
       $scope.soldGoods = new SoldGoodsProvider(api, $scope, 10, $scope.id_rs);
       $scope.soldGoods.reload();
@@ -130,7 +130,7 @@
       $scope.deliveryConfirmedGoods.reload();
 
       $scope.decrypt = function(encryptedMessage, index) {
-        if(encryptedMessage) {
+        if (encryptedMessage) {
           var publicKey = api.crypto.secretPhraseToPublicKey($rootScope.currentAccount.secretPhrase);
           $scope.textMessage = index;
           $scope.decryptedMessage = Gossip.decryptMessage(publicKey, encryptedMessage.nonce, encryptedMessage.data)
@@ -138,22 +138,19 @@
       }
       $scope.rebate = function(rebateOrder) {
         var rebate_args = {
-          // requestType: "dgsRefund",
           purchase: rebateOrder.purchase,
           refundNQT: rebateOrder.priceNQT
         }
-        plugins.get('transaction').get('dgsRefund').execute($scope.id_rs, rebate_args).then(function(data) {
-        })
+        plugins.get('transaction').get('dgsRefund').execute($scope.id_rs, rebate_args).then(function(data) {})
       }
       $scope.confirmDelivery = function(deliveryItem) {
         var confirmDelivery_args = {
-          // requestType: "dgsDelivery",
           purchase: deliveryItem.purchase
         }
-        plugins.get('transaction').get('dgsDelivery').execute($scope.id_rs, confirmDelivery_args).then(function(data) {
-        })
+        plugins.get('transaction').get('dgsDelivery').execute($scope.id_rs, confirmDelivery_args).then(function(data) {})
       }
-    } else {
+    } 
+    else {
 
       $scope.goodsDetails = new GoodsDetailsProvider(api, $scope, $scope.paramSection);
       $scope.goodsDetails.reload();
