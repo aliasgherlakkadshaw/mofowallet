@@ -214,8 +214,15 @@ module.controller('GoodsCtrl', function($location, $rootScope, $scope, $http, $r
     shoppingCartService.add($scope.symbol, details, 1).then(
       function () {
         $location.path('/goods/'+$scope.paramEngine+'/cart');
+      try {
       }
     );
+      }
+    }
+      try {
+      }
+      catch(e) {
+      }
   }
 
 });
