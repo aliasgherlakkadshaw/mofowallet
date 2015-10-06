@@ -125,6 +125,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
           label: 'Name',
           name: 'name',
           type: 'text',
+          readonly: true,
           value: args.name||''
         },
         {
@@ -144,6 +145,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
           label: 'Recipient',
           name: 'recipient',
           type: 'text',
+          readonly: true,
           value: args.recipient||''
         }]
       }));
@@ -174,12 +176,14 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
           label: 'Purchase',
           name: 'purchase',
           type: 'text',
+          readonly: true,
           value: args.purchase||''
         },
         {
           label: 'Price FIMK',
           name: 'price',
           type: 'text',
+          readonly: true,
           value: args.refundNQT||''
         }]
       }));
@@ -211,6 +215,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
           label: 'Purchase',
           name: 'purchase',
           type: 'text',
+          readonly: true,
           value: args.purchase||''
         }]
       }));

@@ -163,13 +163,21 @@
     }
   }).filter('parseImage', function() {
     return function(item) {
-      var data = JSON.parse(item);
-      return data.image;
+      try {
+        var data = JSON.parse(item);
+        return data.image;
+      }
+      catch(e) {
+      }
     }
   }).filter('parseDescription', function() {
     return function(item) {
-      var data = JSON.parse(item);
-      return data.description;
+      try {
+        var data = JSON.parse(item);
+        return data.description;
+      }
+      catch(e) {
+      }
     }
   })
 })();
