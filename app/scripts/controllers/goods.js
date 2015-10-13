@@ -8,7 +8,7 @@ module.config(function($routeProvider) {
     })
 });
 
-module.controller('GoodsCtrl', function($location, $rootScope, $scope, $http, $routeParams, nxt, plugins, 
+  module.controller('GoodsCtrl', function($location, $translate, $rootScope, $scope, $http, $routeParams, nxt, plugins, shoppingCartService, AllGoodsProvider, PastGoodsProvider, GoodsDetailsProvider, UserGoodsProvider, SoldGoodsProvider, DeliveryConfirmedGoodsProvider, Gossip) {
   shoppingCartService, AllGoodsProvider, PastGoodsProvider, GoodsDetailsProvider, UserGoodsProvider, 
   SoldGoodsProvider, DeliveryConfirmedGoodsProvider, Gossip, db) {
 
@@ -165,6 +165,7 @@ module.controller('GoodsCtrl', function($location, $rootScope, $scope, $http, $r
                 console.log(data);
               }).error(function(err) {
                 console.log(err);
+              $scope.successful = $translate.instant('translate.payment_completed');
               });
             }
             item.delete().then(

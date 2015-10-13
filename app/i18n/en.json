@@ -305,6 +305,7 @@
     "no_messages":          "No Messages to Decrypt",
     "confirm_delivery":     "Confirm Delivery",
     "marketplace":          "Marketplace"
+    "not_enough_balance":   "You don't have enough balance to place these orders."          
   },
 
   "time": {
