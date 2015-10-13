@@ -306,7 +306,9 @@
     "refund":               "Refund",
     "decrypt_message":      "Decrypt Message",
     "no_messages":          "No Messages to Decrypt",
-    "confirm_delivery":     "Confirm Delivery"           
+    "confirm_delivery":     "Confirm Delivery",
+    "payment_completed":    "Payment Completed",
+    "not_enough_balance":   "You don't have enough balance to place these orders."          
   },
 
   "time": {

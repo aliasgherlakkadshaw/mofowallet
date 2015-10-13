@@ -8,7 +8,7 @@
       })
   });
 
-  module.controller('GoodsCtrl', function($location, $rootScope, $scope, $http, $routeParams, nxt, plugins, shoppingCartService, AllGoodsProvider, PastGoodsProvider, GoodsDetailsProvider, UserGoodsProvider, SoldGoodsProvider, DeliveryConfirmedGoodsProvider, Gossip) {
+  module.controller('GoodsCtrl', function($location, $translate, $rootScope, $scope, $http, $routeParams, nxt, plugins, shoppingCartService, AllGoodsProvider, PastGoodsProvider, GoodsDetailsProvider, UserGoodsProvider, SoldGoodsProvider, DeliveryConfirmedGoodsProvider, Gossip) {
 
     $scope.id_rs = $routeParams.id_rs;
     $scope.paramSection = $routeParams.listing;
@@ -56,7 +56,7 @@
       $scope.placeOrder = function() {
         $scope.balance = $rootScope.userData.balanceNXT;
         if ($scope.total >= $scope.balance) {
-          $scope.balanceError = "You don't have enough balance to place these orders.";
+          $scope.balanceError = $translate.instant('translate.not_enough_balance');
         } 
         else {
           processCart($scope.shoppingCart);
@@ -90,7 +90,7 @@
               shoppingCart.splice(0, 1);
               processCart(shoppingCart);
 
-              $scope.successful = "Payment Completed";
+              $scope.successful = $translate.instant('translate.payment_completed');
             }
           });
         }
