@@ -318,7 +318,13 @@
     "asset_details":        "Asset details",
     "assets_orders":        "name,asset,numberOfTrades,description,quantityQNT,decimals,accountRS",
     "save_key":             "Save key",
-    "save_key_message":     "Do you want to save this encrypted key in your browser?"
+    "save_key_message":     "Do you want to save this encrypted key in your browser?",
+    "remove_contact":       "Remove contact",
+    "remove_contact_message":"Do you want to remove this contact? Removal cannot be undone.",
+    "simple":               "simple",
+    "complex":              "complex",
+    "simple_message":       "This operation requires your secret passphrase. Either enter it by hand or click Open Wallet to load a wallet file containing your secret phrase.",
+    "complex_message":      "This operation requires a sender and secret passphrase."
   },
 
   "time": {

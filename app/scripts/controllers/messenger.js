@@ -54,7 +54,7 @@ module.config(function($routeProvider) {
     });
 });
 
-module.controller('MessengerController', function($location, $q, $scope, modals, $rootScope, 
+module.controller('MessengerController', function($location, $q, $scope, modals, $rootScope, $translate,
   $routeParams, nxt, plugins, GossipChatMessagesProvider, Gossip, Emoji, 
   KeyService, $timeout, settings, publicKeyService, GossipChatListProvider, $interval) {
   
@@ -318,8 +318,8 @@ module.controller('MessengerController', function($location, $q, $scope, modals,
 
   $scope.removeContact = function (id_rs) {
     plugins.get('alerts').confirm({
-      title: 'Remove contact',
-      message: 'Do you want to remove this contact? Removal cannot be undone.'
+      title: $translate.instant('translate.remove_contact'),
+      message: $translate.instant('translate.remove_contact_message')
     }).then(
       function (value) {
         if (value) {
