@@ -316,7 +316,9 @@
     "transaction_details":  "Transaction details",
     "transaction_order":    "timestamp,senderRS,recipientRS,amountNQT,attachment,type,feeNQT",
     "asset_details":        "Asset details",
-    "assets_orders":        "name,asset,numberOfTrades,description,quantityQNT,decimals,accountRS"
+    "assets_orders":        "name,asset,numberOfTrades,description,quantityQNT,decimals,accountRS",
+    "save_key":             "Save key",
+    "save_key_message":     "Do you want to save this encrypted key in your browser?"
   },
 
   "time": {

@@ -8,7 +8,7 @@ module.config(function($routeProvider) {
       controller: 'LoginController'
     });
 });
-module.controller('LoginController', function($scope, $rootScope, $location, 
+module.controller('LoginController', function($scope, $rootScope, $location, $translate,
   $routeParams, nxt, plugins, WalletService, $timeout) {
 
   var cipher_secret     = $routeParams.encrypted_secret_key;
@@ -27,8 +27,8 @@ module.controller('LoginController', function($scope, $rootScope, $location,
 
   $scope.saveKey = function () {
     plugins.get('alerts').confirm({
-      title: 'Save key',
-      message: "Do you want to save this encrypted key in your browser?"
+      title: $translate.instant('translate.save_key'),
+      message: $translate.instant('translate.save_key_message')
     }).then(
       function (confirmed) {
         if (confirmed) {
