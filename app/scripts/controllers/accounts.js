@@ -10,7 +10,7 @@ module.config(function($routeProvider) {
     });
 });
 
-module.controller('AccountsController', function($location, $q, $scope, modals, $routeParams, nxt, db, plugins, $timeout, 
+module.controller('AccountsController', function($location, $translate, $q, $scope, modals, $routeParams, nxt, db, plugins, $timeout, 
   ActivityProvider, MessagesProvider, BlocksProvider, AliasProvider, NamespacedAliasProvider, AssetsProvider, CurrencyProvider, AccountProvider, 
   BuyOrderProvider, SellOrderProvider, AccountPostProvider, AccountForgerProvider, AccountLessorsProvider, 
   dateParser, dateFilter, accountsService, PaymentsProvider, $rootScope, serverService) {
@@ -231,7 +231,7 @@ module.controller('AccountsController', function($location, $q, $scope, modals, 
 
   $scope.followUser = function () {
     plugins.get('alerts').confirm({
-      title: 'Follow account',
+      title: $translate.instant('translate.follow_account'),
       html: 'Do you want to follow this account?<br>By following this account it will be added to your dashboard.'
     }).then(
       function (confirmed) {
@@ -257,7 +257,7 @@ module.controller('AccountsController', function($location, $q, $scope, modals, 
     accountsService.getFirst($scope.id_rs).then(function (item) {
       if (item) {
         plugins.get('alerts').confirm({
-          title: 'Unfollow account',
+          title: $translate.instant('translate.unfollow_account'),
           html: 'Are you sure you want to unfollow this account?<br>By un following this account it will be removed from your dashboard.'
         }).then(
           function (confirmed) {

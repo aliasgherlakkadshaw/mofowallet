@@ -273,6 +273,7 @@
     "goods_tags":           "Tags",
     "goods_quantity":       "Quantity",
     "goods_price":          "Price {{symbol}}",
+    "goods_price_nxt":      "Price {{symbol}}",
     "load_more_products":   "Load more products",
     "delete_good":          "Delete",
     "show_all_items":       "Show All Items",
@@ -284,6 +285,8 @@
     "back_to_items":        "Back to Items",
     "goods_total_price":    "Total Price",
     "remove_from_cart":     "Remove Item",
+    "price_FIMK":           "{{symbol}}",
+    "price_NXT":            "{{symbol}}",
     "estimated_price":      "Estimated Price",
     "place_order":          "Place Order",
     "continue_shopping":    "Continue Shopping",
@@ -305,7 +308,9 @@
     "no_messages":          "No Messages to Decrypt",
     "confirm_delivery":     "Confirm Delivery",
     "marketplace":          "Marketplace"
-    "not_enough_balance":   "You don't have enough balance to place these orders."          
+    "not_enough_balance":   "You don't have enough balance to place these orders.",
+    "follow_account":       "Follow account",
+    "unfollow_account":     "Unfollow account"      
   },
 
   "time": {
