@@ -312,7 +312,11 @@
     "follow_account":       "Follow account",
     "follow_acc_question":  "Do you want to follow this account?<br>By following this account it will be added to your dashboard.",
     "unfollow_account":     "Unfollow account",
-    "unfollow_acc_question":"Are you sure you want to unfollow this account?<br>By un following this account it will be removed from your dashboard."
+    "unfollow_acc_question":"Are you sure you want to unfollow this account?<br>By un following this account it will be removed from your dashboard.",
+    "transaction_details":  "Transaction details",
+    "transaction_order":    "timestamp,senderRS,recipientRS,amountNQT,attachment,type,feeNQT",
+    "asset_details":        "Asset details",
+    "assets_orders":        "name,asset,numberOfTrades,description,quantityQNT,decimals,accountRS"
   },
 
   "time": {

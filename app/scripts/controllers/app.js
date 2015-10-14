@@ -270,9 +270,9 @@ module.controller('AppController', function($rootScope, $scope, $modal, $q, $log
         }
         var inspector = plugins.get('inspector');
         inspector.inspect({
-          title: 'Transaction Details',
+          title: $translate.instant('translate.transaction_details'),
           object: transaction,
-          order: 'timestamp,senderRS,recipientRS,amountNQT,attachment,type,feeNQT',
+          order: $translate.instant('translate.transaction_order'),
           translator: inspector.createTransactionTranslator(api, transaction)
         });
         break;
@@ -281,9 +281,9 @@ module.controller('AppController', function($rootScope, $scope, $modal, $q, $log
         var asset = api.assets.get(decodeURIComponent(value));
         var inspector = plugins.get('inspector');
         inspector.inspect({
-          title: 'Asset Details',
+          title: $translate.instant('translate.asset_details'),
           object: asset,
-          order: 'name,asset,numberOfTrades,description,quantityQNT,decimals,accountRS',
+          order: $translate.instant('translate.assets_orders'),
           translator: inspector.createAssetTranslator(api, asset)
         });
         break;
