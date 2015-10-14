@@ -310,7 +310,9 @@
     "marketplace":          "Marketplace"
     "not_enough_balance":   "You don't have enough balance to place these orders.",
     "follow_account":       "Follow account",
-    "unfollow_account":     "Unfollow account"      
+    "follow_acc_question":  "Do you want to follow this account?<br>By following this account it will be added to your dashboard.",
+    "unfollow_account":     "Unfollow account",
+    "unfollow_acc_question":"Are you sure you want to unfollow this account?<br>By un following this account it will be removed from your dashboard."
   },
 
   "time": {

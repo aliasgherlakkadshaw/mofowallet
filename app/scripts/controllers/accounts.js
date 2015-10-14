@@ -232,7 +232,7 @@ module.controller('AccountsController', function($location, $translate, $q, $sco
   $scope.followUser = function () {
     plugins.get('alerts').confirm({
       title: $translate.instant('translate.follow_account'),
-      html: 'Do you want to follow this account?<br>By following this account it will be added to your dashboard.'
+      html:  $translate.instant('translate.follow_acc_question')
     }).then(
       function (confirmed) {
         if (confirm) {
@@ -258,7 +258,7 @@ module.controller('AccountsController', function($location, $translate, $q, $sco
       if (item) {
         plugins.get('alerts').confirm({
           title: $translate.instant('translate.unfollow_account'),
-          html: 'Are you sure you want to unfollow this account?<br>By un following this account it will be removed from your dashboard.'
+          html:  $translate.instant('translate.unfollow_acc_question')
         }).then(
           function (confirmed) {
             if (confirmed) {
