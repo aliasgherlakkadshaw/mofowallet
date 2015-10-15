@@ -181,8 +181,6 @@ module.config(function($routeProvider) {
               }              
             );
           }
-    else if ($scope.paramSection == "pastorders") {
-        }
     })
   }
 }
