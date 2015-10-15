@@ -307,7 +307,8 @@
     "decrypt_message":      "Decrypt Message",
     "no_messages":          "No Messages to Decrypt",
     "confirm_delivery":     "Confirm Delivery",
-    "marketplace":          "Marketplace",
+<<<<<<< HEAD
+    "marketplace":          "Marketplace"
     "not_enough_balance":   "You don't have enough balance to place these orders.",
     "follow_account":       "Follow account",
     "follow_acc_question":  "Do you want to follow this account?<br>By following this account it will be added to your dashboard.",
@@ -330,6 +331,10 @@
     "confirmation_mail":    "You have been emailed the confirmation link you must complete to activate the faucet transfer.",
     "close_btn":            "Close",
     "failed_message":       "Failed"
+=======
+    "payment_completed":    "Payment Completed",
+    "not_enough_balance":   "You don't have enough balance to place these orders."          
+>>>>>>> 82db786c87c9468bcc7492237d1e57283a9ab9b2
   },
 
   "time": {
