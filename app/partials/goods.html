@@ -1,7 +1,6 @@
 <div ng-init="offCanvas=false" class="row row-offcanvas row-offcanvas-left" ng-class="{active: offCanvas}">
   <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar">
     <ul class="nav navbar-stacked">
-
       <li ng-if="!currentAccount" role="presentation">
         <a href="#/login-to/navigate|goods|{{paramEngine}}|listing" 
             translate="translate.sign_in" class="bg-primary"></a>
@@ -60,6 +59,17 @@
         <a href="#/goods/{{id_rs}}/cart" class= "btn btn-clear">{{'translate.cart' | translate}} ({{shoppingCart.length}})</a>
         <a ng-click= "add()" class= "btn btn-clear add-goods-button" ng-if= "currentAccount.secretPhrase.length > 0">{{'translate.add_item' | translate}}</a>
         <a href= "#/login-to" class= "btn btn-clear add-goods-button" ng-if= "currentAccount.secretPhrase.length == null">{{'translate.sign_in' | translate}}</a>
+      </div>
+      <div class= "col-md-12 visible-xs">
+        <p class="visible-xs">
+          <button type="button" class="btn btn-xs btn-primary" ng-class="{'btn-default':offCanvas, 'btn-primary':!offCanvas}" ng-click="offCanvas=!offCanvas">
+            <i class="fa fa-angle-double-{{offCanvas?'left':'right'}}"></i>
+            <i class="fa fa-angle-double-{{offCanvas?'left':'right'}}"></i>
+            <i class="fa fa-angle-double-{{offCanvas?'left':'right'}}"></i>
+          </button>
+        </p>
+      </div>
+      <div class="col-md-12 goods-col1 hidden-xs" style= "margin-bottom: 20px;">
       </div>
       <div class= "col-md-12 visible-xs">
         <p class="visible-xs">
@@ -228,6 +238,17 @@
           </p>
         </div>
         <div class="col-md-12 top-buttons hidden-xs">
+        </div>
+        <div class= "col-md-12 visible-xs">
+          <p class="visible-xs">
+            <button type="button" class="btn btn-xs btn-primary" ng-class="{'btn-default':offCanvas, 'btn-primary':!offCanvas}" ng-click="offCanvas=!offCanvas">
+              <i class="fa fa-angle-double-{{offCanvas?'left':'right'}}"></i>
+              <i class="fa fa-angle-double-{{offCanvas?'left':'right'}}"></i>
+              <i class="fa fa-angle-double-{{offCanvas?'left':'right'}}"></i>
+            </button>
+          </p>
+        </div>
+        <div class="col-md-12 top-buttons hidden-xs">
           <label class="btn btn-default">{{'translate.cart' | translate}} ({{shoppingCart.length}})</label>
           <a ng-if="currentAccount" href="#/goods/{{currentAccount.symbol_lower}}/pastorders/{{currentAccount.id_rs}}" 
             class="btn btn-default past-orders">{{'translate.past_orders' | translate}}</a>
@@ -311,6 +332,8 @@
         </div>
         <div class="col-md-12 past-order-col1 hidden-xs">
         </div>
+        <div class="col-md-12 past-order-col1 hidden-xs">
+        </div>
       </div> -->
       <div infinite-scroll="provider.loadMore()" 
             infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
@@ -390,6 +413,8 @@
               <i class="fa fa-angle-double-{{offCanvas?'left':'right'}}"></i>
             </button>
           </p>
+        </div>
+        <div class="col-md-12 past-order-col1 hidden-xs">
         </div>
         <div class="col-md-12 past-order-col1 hidden-xs">
         </div>

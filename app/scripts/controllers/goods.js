@@ -186,6 +186,8 @@ module.config(function($routeProvider) {
       );
     }
   }
+    else if ($scope.paramSection == "viewlisting") {
+    else if ($scope.paramSection == 'solditems') {
 
   $scope.decrypt = function(encryptedMessage, index) {
     if(encryptedMessage) {
@@ -209,6 +211,7 @@ module.config(function($routeProvider) {
     }
     plugins.get('transaction').get('dgsDelivery').execute(confirmDelivery_args);
   }
+    } 
     else {
 
   $scope.addToCart = function(details) {
@@ -219,12 +222,9 @@ module.config(function($routeProvider) {
       }
     );
       }
-    }
       try {
       }
       catch(e) {
-      }
-  }
-
-});
+    }
+  })
 })();
