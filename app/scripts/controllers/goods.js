@@ -222,4 +222,4 @@ module.config(function($routeProvider) {
   }
 
 })
-})
+})();
